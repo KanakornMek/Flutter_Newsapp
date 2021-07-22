@@ -10,7 +10,7 @@ workflows:
     scripts:
       - flutter packages pub get
       - find . -name "Podfile" -execdir pod install \;
-      - flutter build ipa --release
+      - flutter build ios --release --no-codesign
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
